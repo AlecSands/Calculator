@@ -8,6 +8,7 @@ var path = require("path");
 
 var answer;
 
+// Recieves and responds to a POST request from the client under the 'add' path
 app.post('/add', function(req, res) {
   request = req.body;
   console.log(request);
@@ -15,6 +16,7 @@ app.post('/add', function(req, res) {
   res.send("" + answer);
 });
 
+// Recieves and responds to a POST request from the client under the 'subtract' path
 app.post('/subtract', function(req, res) {
   request = req.body;
   console.log(request);
@@ -22,6 +24,7 @@ app.post('/subtract', function(req, res) {
   res.send("" + answer);
 });
 
+// Recieves and responds to a POST request from the client under the 'multiply' path
 app.post('/multiply', function(req, res) {
   request = req.body;
   console.log(request);
@@ -29,6 +32,7 @@ app.post('/multiply', function(req, res) {
   res.send("" + answer);
 });
 
+// Recieves and responds to a POST request from the client under the 'divide' path
 app.post('/divide', function(req, res) {
   request = req.body;
   console.log(request);

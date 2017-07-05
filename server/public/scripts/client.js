@@ -2,10 +2,13 @@ var answer;
 
 $('document').ready(function() {
   console.log('jquery sourced');
+
+  // Adds the two input numbers together
   $('#add').on('click', function() {
     var numberOne = $('#numberOne').val();
     var numberTwo = $('#numberTwo').val();
     console.log(numberOne + "" + numberTwo);
+    // Sends data to server under the 'add' channel
     $.ajax({
       type: 'POST',
       url: '/add',
@@ -13,6 +16,7 @@ $('document').ready(function() {
         numberOne: numberOne,
         numberTwo: numberTwo
       },
+      // Takes the response data and adds it to the DOM
       success: function(response) {
         answer = parseInt(response);
         console.log(answer);
@@ -20,10 +24,13 @@ $('document').ready(function() {
       }
     });
   });
+
+  // Subtracts the second number from the first
   $('#subtract').on('click', function() {
     var numberOne = $('#numberOne').val();
     var numberTwo = $('#numberTwo').val();
     console.log(numberOne + "" + numberTwo);
+    // Sends data to server under the 'subtract' channel
     $.ajax({
       type: 'POST',
       url: '/subtract',
@@ -31,6 +38,7 @@ $('document').ready(function() {
         numberOne: numberOne,
         numberTwo: numberTwo
       },
+      // Takes the response data and adds it to the DOM
       success: function(response) {
         answer = parseInt(response);
         console.log(answer);
@@ -38,10 +46,13 @@ $('document').ready(function() {
       }
     });
   });
+
+  // Multiplies the two input numbers together
   $('#multiply').on('click', function() {
     var numberOne = $('#numberOne').val();
     var numberTwo = $('#numberTwo').val();
     console.log(numberOne + "" + numberTwo);
+    // Sends data to server under the 'multiply' channel
     $.ajax({
       type: 'POST',
       url: '/multiply',
@@ -49,6 +60,7 @@ $('document').ready(function() {
         numberOne: numberOne,
         numberTwo: numberTwo
       },
+      // Takes the response data and adds it to the DOM
       success: function(response) {
         answer = parseInt(response);
         console.log(answer);
@@ -56,10 +68,13 @@ $('document').ready(function() {
       }
     });
   });
+
+  // Divides the second number into the first
   $('#divide').on('click', function() {
     var numberOne = $('#numberOne').val();
     var numberTwo = $('#numberTwo').val();
     console.log(numberOne + "" + numberTwo);
+    // Sends data to server under the 'divide' channel
     $.ajax({
       type: 'POST',
       url: '/divide',
@@ -67,6 +82,7 @@ $('document').ready(function() {
         numberOne: numberOne,
         numberTwo: numberTwo
       },
+      // Takes the response data and adds it to the DOM
       success: function(response) {
         answer = parseInt(response);
         console.log(answer);

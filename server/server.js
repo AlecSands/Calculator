@@ -15,6 +15,27 @@ app.post('/add', function(req, res) {
   res.send("" + answer);
 });
 
+app.post('/subtract', function(req, res) {
+  request = req.body;
+  console.log(request);
+  answer = parseInt(request.numberOne) - parseInt(request.numberTwo);
+  res.send("" + answer);
+});
+
+app.post('/multiply', function(req, res) {
+  request = req.body;
+  console.log(request);
+  answer = parseInt(request.numberOne) * parseInt(request.numberTwo);
+  res.send("" + answer);
+});
+
+app.post('/divide', function(req, res) {
+  request = req.body;
+  console.log(request);
+  answer = parseInt(request.numberOne) / parseInt(request.numberTwo);
+  res.send("" + answer);
+});
+
 app.get('/*', function(req, res) {
   var file = req.params[0] || "/views/index.html";
   res.sendFile(path.join(__dirname, "/public/", file));
